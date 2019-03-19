@@ -115,6 +115,13 @@ data.raw["gui-style"].default["als_location_view"] =
 --- Main GUI
 data.raw["gui-style"].default["als_frame"] =
 {
+    parent = 'frame',
+    header_filler_style = {
+        height = 24,
+        parent = "draggable_space_header",
+        type = "empty_widget_style"
+    },
+    use_header_filler = true,
     type = "frame_style",
     font = "font-m",
     minimal_width = 740,
@@ -130,7 +137,7 @@ data.raw["gui-style"].default["als_title_label"] =
 {
     type = "label_style",
     parent = "label",
-    width = 708,
+    width =  538,
     align = "center",
     font = "font-lb",
 	scalable = is_scalable,
@@ -201,9 +208,7 @@ data.raw["gui-style"].default["als_search_label"] =
 data.raw["gui-style"].default["als_searchfield_style"] =
 {
     type = "textbox_style",
-    parent = "textbox",
-	height = 20,
-	maximal_height = 20,
+    parent = "search_textfield_with_fixed_width",
 }
 
 -- item info
@@ -351,6 +356,14 @@ data.raw["gui-style"].default["als_name_flow"] =
     width = 252,
     scalable = is_scalable,
 }
+
+data.raw["gui-style"].default["als_name_edit"] =
+{
+    type = "textbox_style",
+    parent = "textbox",
+    width = 159
+}
+
 
 data.raw["gui-style"].default["als_items_info_flow"] =
 {
@@ -556,6 +569,11 @@ data.raw["gui-style"].default["als_button_small"] =
             height = 28,
             x = 0
     }
+data.raw["gui-style"].default["als_pager_button"] =
+{
+    type = "button_style",
+    parent = "als_button_small",
+    width = 56
 }
 
 data.raw["gui-style"].default["als_button_small_selected"] =
@@ -597,10 +615,6 @@ data.raw["gui-style"].default["als_button_main_icon"] =
     parent = "button",
     width = 32,
     height = 32,
-    top_padding = 6,
-    right_padding = 0,
-    bottom_padding = 0,
-    left_padding = 0,
     font = "font-m",
     default_graphical_set =
     {
@@ -636,42 +650,36 @@ data.raw["gui-style"].default["als_button_main_icon"] =
 data.raw["gui-style"].default["als_button_close"] =
 {
     type = "button_style",
-    parent = "button",
-    top_padding = 0,
-    right_padding = 0,
-    bottom_padding = 0,
-    left_padding = 0,
-    width = 16,
-    height = 16,
+    parent = "tool_button",
     font = "font-sb",
     align = "center",
-    hovered_font_color = {r=0.1, g=0.1, b=0.1},
-    default_graphical_set =
-    {
+    -- hovered_font_color = {r=0.1, g=0.1, b=0.1},
+    -- default_graphical_set =
+    -- {
 
-            filename = "__advanced-logistics-system__/graphics/gui.png",
-            priority = "extra-high-no-scale",
-            width = 16,
-            height = 16,
-            x = 0
-    },
-    hovered_graphical_set =
-    {
+    --         filename = "__advanced-logistics-system__/graphics/gui.png",
+    --         priority = "extra-high-no-scale",
+    --         width = 16,
+    --         height = 16,
+    --         x = 0
+    -- },
+    -- hovered_graphical_set =
+    -- {
 
-            filename = "__advanced-logistics-system__/graphics/gui.png",
-            priority = "extra-high-no-scale",
-            width = 16,
-            height = 16,
-            x = 32
-    },
-    clicked_graphical_set =
-    {
+    --         filename = "__advanced-logistics-system__/graphics/gui.png",
+    --         priority = "extra-high-no-scale",
+    --         width = 16,
+    --         height = 16,
+    --         x = 32
+    -- },
+    -- clicked_graphical_set =
+    -- {
 
-            filename = "__advanced-logistics-system__/graphics/gui.png",
-            width = 16,
-            height = 16,
-            x = 0
-    }
+    --         filename = "__advanced-logistics-system__/graphics/gui.png",
+    --         width = 16,
+    --         height = 16,
+    --         x = 0
+    -- }
 }
 
 -- items table action icons
@@ -2186,6 +2194,7 @@ data.raw["gui-style"].default["als_button_edit"] =
     right_padding = 0,
     bottom_padding = 0,
     left_padding = 0,
+    left_margin = 18,
     font = "font-m",
     scalable = is_scalable,
     visible = true,
@@ -2230,6 +2239,7 @@ data.raw["gui-style"].default["als_button_confirm"] =
     right_padding = 0,
     bottom_padding = 0,
     left_padding = 0,
+    left_margin = 18,
     font = "font-m",
     scalable = is_scalable,
     visible = true,

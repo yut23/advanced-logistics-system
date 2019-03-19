@@ -180,9 +180,9 @@ function showNetworksInfo(player, index, page, sort_by, sort_dir)
             local prevPage = page-1
             pager = contentFrame.add({type = "flow", name = "pagerFlow", direction="horizontal"})
             pager.add({type = "label", name = "pagerLabel", caption = "Page:"})
-            pager.add({type = "button", name = "prevPage_" .. prevPage , caption = "<", style = "als_button"})
+            pager.add({type = "button", name = "prevPage_" .. prevPage , caption = "<", style = "als_pager_button"})
             pager.add({type = "label", name = "pageTotal", caption = page.."/"..maxPages})
-            pager.add({type = "button", name = "nextPage_" .. nextPage , caption = ">", style = "als_button"})
+            pager.add({type = "button", name = "nextPage_" .. nextPage , caption = ">", style = "als_pager_button"})
         end
     end
 
@@ -380,9 +380,9 @@ function showNetworkInfo(net, player, index, page, sort_by, sort_dir)
                 local prevPage = page-1
                 pager = contentFrame.add({type = "flow", name = "pagerFlow", direction="horizontal"})
                 pager.add({type = "label", name = "pagerLabel", caption = "Page:"})
-                pager.add({type = "button", name = "prevPage_" .. prevPage , caption = "<", style = "als_button"})
+                pager.add({type = "button", name = "prevPage_" .. prevPage , caption = "<", style = "als_pager_button"})
                 pager.add({type = "label", name = "pageTotal", caption = page.."/"..maxPages})
-                pager.add({type = "button", name = "nextPage_" .. nextPage , caption = ">", style = "als_button"})
+                pager.add({type = "button", name = "nextPage_" .. nextPage , caption = ">", style = "als_pager_button"})
             end
         end
     end

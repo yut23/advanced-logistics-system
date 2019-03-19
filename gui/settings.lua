@@ -26,9 +26,9 @@ function showSettings(player, index)
         local guiPosSettings = global.settings[index].guiPos
         settingsTable.add({type = "label", name = "guiPosLabel", caption = {"settings.gui-pos"}, style = "als_info_label"})
         local settingFlow = settingsTable.add({type = "flow", name = "guiPosFlow", direction = "horizontal"})
-        settingFlow.add({type = "checkbox", name = "guiPos_left", style = "checkbox", caption = "Left", state = guiPosSettings == "left"})
-        settingFlow.add({type = "checkbox", name = "guiPos_top", style = "checkbox", caption = "Top", state = guiPosSettings == "top"})
-        settingFlow.add({type = "checkbox", name = "guiPos_center", style = "checkbox", caption = "Center", state = guiPosSettings == "center"})
+        settingFlow.add({type = "radiobutton", name = "guiPos_left", style = "radiobutton", caption = "Left", state = guiPosSettings == "left"})
+        settingFlow.add({type = "radiobutton", name = "guiPos_top", style = "radiobutton", caption = "Top", state = guiPosSettings == "top"})
+        settingFlow.add({type = "radiobutton", name = "guiPos_center", style = "radiobutton", caption = "Center", state = guiPosSettings == "center"})
         settingsTable.add({type = "label", name = "guiPosHelp", caption = {"settings.gui-pos-help"}, style = "als_settings_info_label"})
 
         -- refresh interval
@@ -75,8 +75,9 @@ function showSettings(player, index)
         settingsTable.add({type = "label", name = "logDataHelp", caption = {"settings.log-data-help"}, style = "als_settings_info_label"})
 
         -- Save settings
-        settingsFrame.add({type = "button", name = "cancelSettingsBtn", caption = {"settings.cancel"}, style = "als_button"})
-        settingsFrame.add({type = "button", name = "saveSettingsBtn", caption = {"settings.save-settings"}, style = "als_button"})
+        local settingBtnFlow = settingsFrame.add({type="flow", direction="horizontal"})
+        settingBtnFlow.add({type = "button", name = "cancelSettingsBtn", caption = {"settings.cancel"}, style = "als_button"})
+        settingBtnFlow.add({type = "button", name = "saveSettingsBtn", caption = {"settings.save-settings"}, style = "als_button"})
     end
 end
 
