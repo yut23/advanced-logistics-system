@@ -24,6 +24,7 @@ function createGUI(player, index)
 
         -- main frame
         local logisticsFrame = player.gui[guiPos].add({type = "frame", name = "logisticsFrame", direction = "vertical", style = "als_frame"})        
+        player.opened = logisticsFrame
         local titleFlow = logisticsFrame.add({type = "flow", name = "titleFlow", direction = "horizontal"})
         titleFlow.add({type = "button", name = "logistics-view-close", caption = {"logistics-view-close"}, style = "als_button_close"})
         titleFlow.add({type = "label", name="titleLabel", style = "als_title_label", caption = {"logistics-view"}})        

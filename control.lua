@@ -1148,6 +1148,7 @@ function viewPosition(player, index, position)
         locationFlow.destroy()
     end
     locationFlow = player.gui.center.add({type = "flow", name = "locationFlow", direction = "horizontal"})
+    player.opened = locationFlow
     locationFlow.add({type = "button", name = "locationViewBack", caption = {"location-back"}, style = "als_location_view"})
 end
 

@@ -37,6 +37,19 @@ end)
 
 --- GUI Events
 
+-- handler for E and Escape
+script.on_event(defines.events.on_gui_closed, function(event)
+	if event.element then
+		local index = event.player_index
+		local player = game.players[index]
+		if event.element.name == "logisticsFrame" then
+			hideGUI(player, index)
+		elseif event.element.name == "locationFlow" then
+			resetPosition(player, index)
+		end
+	end
+end)
+
 -- Search Events
 script.on_event(defines.events.on_gui_text_changed, function(event)
 
